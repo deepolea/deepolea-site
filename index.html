@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>DeepOlea — Yapay Zekâ Tabanlı Bilişim Çözümleri</title>
+<meta name="description" content="DeepOlea, yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştüren bir teknoloji şirketidir. Gaziantep merkezli." />
+<meta name="theme-color" content="#F2F3EC" />
+<link rel="icon" type="image/png" href="favicon.png" />
+
+<!-- ============================================================
+     ÖZELLEŞTİRME NOTLARI:
+     - Görseller index.html ile AYNI klasörde olmalı:
+         deepolea-logo.jpg  (üstteki tam logo)
+         deepolea-mark.png  (başlıktaki amblem)
+         favicon.png        (sekme ikonu)
+     - E-posta: "info@deepolea.com" -> kendi adresinizle değiştirin.
+     - Domain: alt bilgideki "deepolea.com" -> kendi alan adınızla.
+     - Hizmet kartlarını ve iletişim bilgisini işinize göre düzenleyin.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#F2F3EC;        /* logo kremi, ana zemin */
+    --paper-2:#EAEBDF;      /* hafif derin krem, alternatif bölüm */
+    --card:#FBFBF6;         /* yükseltilmiş kart */
+    --green-deep:#1B462B;   /* derin orman yeşili (logodan) — birincil */
+    --green:#3D6237;        /* yaprak yeşili (logodan) — ikincil/vurgu */
+    --green-bright:#5C8A4A; /* taze yeşil — hover */
+    --ink:#26301F;          /* gövde metni (yeşilimsi koyu, siyah değil) */
+    --muted:#5E6A52;        /* ikincil metin */
+    --line:rgba(27,70,43,.16);
+    --line-strong:rgba(27,70,43,.30);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(61,98,55,.22);color:var(--green-deep)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--green);
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;color:var(--green-deep);font-weight:500;line-height:1.08}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom,rgba(242,243,236,.9),rgba(242,243,236,.5));
+    border-bottom:1px solid transparent;transition:border-color .4s ease,background .4s ease;
+  }
+  header.scrolled{border-bottom:1px solid var(--line);background:rgba(242,243,236,.94)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{height:34px;width:auto;display:block}
+  .brand .name{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--green-deep);letter-spacing:.01em}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--ink);transition:color .25s}
+  .nav-links a:hover{color:var(--green-deep)}
+  .nav-cta{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;
+    color:var(--green-deep)!important;border:1px solid var(--line-strong);
+    padding:8px 16px;border-radius:999px;transition:border-color .25s,background .25s;
+  }
+  .nav-cta:hover{border-color:var(--green);background:rgba(61,98,55,.07)}
+  @media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:150px 0 96px;text-align:center;overflow:hidden}
+  .hero-glow{
+    position:absolute;left:50%;top:-10%;transform:translateX(-50%);
+    width:900px;height:700px;pointer-events:none;
+    background:radial-gradient(ellipse at center,rgba(92,138,74,.14),transparent 62%);
+  }
+  .hero-inner{position:relative}
+  .hero-logo{
+    max-width:430px;width:78%;height:auto;display:block;margin:0 auto 30px;
+    opacity:0;animation:pop 1s cubic-bezier(.22,.7,.3,1) forwards;
+  }
+  @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:none}}
+  .hero-eyebrow{display:inline-block;margin-bottom:22px;opacity:0;animation:rise .8s ease .25s forwards}
+  .hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);letter-spacing:-.02em;margin-bottom:24px;opacity:0;animation:rise .85s ease .38s forwards}
+  .hero h1 .accent{font-style:italic;color:var(--green)}
+  .hero-sub{max-width:34em;margin:0 auto 36px;font-size:clamp(1.02rem,2.2vw,1.18rem);color:var(--muted);opacity:0;animation:rise .85s ease .5s forwards}
+  .hero-actions{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;opacity:0;animation:rise .85s ease .62s forwards}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  .btn{font-family:"IBM Plex Mono",monospace;font-size:14px;letter-spacing:.03em;padding:14px 26px;border-radius:999px;display:inline-block;transition:transform .2s,background .25s,border-color .25s,color .25s}
+  .btn-primary{background:var(--green-deep);color:var(--paper);font-weight:500}
+  .btn-primary:hover{background:var(--green);transform:translateY(-2px)}
+  .btn-ghost{color:var(--green-deep);border:1px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--green);transform:translateY(-2px)}
+
+  /* ---------- sections ---------- */
+  section.block{padding:92px 0;border-top:1px solid var(--line)}
+  .section-head{margin-bottom:52px;max-width:38em}
+  .section-head .eyebrow{display:block;margin-bottom:16px}
+  .section-head h2{font-size:clamp(2rem,4.4vw,2.85rem);letter-spacing:-.015em}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:34px 30px 38px;transition:transform .3s,box-shadow .3s,border-color .3s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(27,70,43,.08);border-color:var(--line-strong)}
+  .card .num{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--green);letter-spacing:.1em}
+  .card h3{font-size:1.42rem;margin:18px 0 12px}
+  .card p{font-size:.97rem;color:var(--muted)}
+
+  /* name story */
+  .story{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
+  @media(max-width:820px){.story{grid-template-columns:1fr;gap:34px}}
+  .story h2{font-size:clamp(2rem,4.4vw,2.85rem);letter-spacing:-.015em;margin:14px 0 20px}
+  .story .lede{font-size:1.05rem;color:var(--ink);margin-bottom:14px}
+  .story .lede em{font-style:italic;color:var(--green-deep)}
+  .equation{
+    font-family:"Fraunces",serif;font-size:clamp(2.2rem,5.5vw,3.3rem);color:var(--green-deep);
+    text-align:center;line-height:1.2;padding:46px 24px;border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(160deg,var(--card),var(--paper-2));
+  }
+  .equation .deep{color:var(--ink)}
+  .equation .plus{color:var(--green);font-style:italic;margin:0 .22em}
+  .equation .olea{color:var(--green);font-style:italic}
+  .equation small{display:block;font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:16px;font-style:normal}
+
+  /* contact */
+  .block-alt{background:var(--paper-2)}
+  .contact{text-align:center;max-width:620px;margin:0 auto}
+  .contact h2{font-size:clamp(2.1rem,5vw,3rem);letter-spacing:-.02em;margin:16px 0 18px}
+  .contact p{font-size:1.07rem;color:var(--muted);margin-bottom:32px}
+  .mail{font-family:"Fraunces",serif;font-size:clamp(1.4rem,4vw,2rem);color:var(--green);font-style:italic;border-bottom:1px solid var(--line-strong);padding-bottom:4px;transition:color .25s,border-color .25s}
+  .mail:hover{color:var(--green-deep);border-color:var(--green)}
+  .meta{margin-top:28px;font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.05em;color:var(--muted)}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:38px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot .brand{gap:10px}
+  .foot .brand img{height:26px}
+  .foot .brand .name{font-size:17px}
+  .foot .fine{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--muted)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal,.hero-logo,.hero-eyebrow,.hero h1,.hero-sub,.hero-actions{opacity:1!important;transform:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="deepolea-mark.png" alt="DeepOlea amblemi" />
+      <span class="name">DeepOlea</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#yaptiklarimiz">Ne yapıyoruz</a>
+      <a href="#isim">İsmin hikâyesi</a>
+      <a class="nav-cta" href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="deepolea-logo.jpg" alt="DeepOlea logo" />
+      <span class="eyebrow hero-eyebrow">Yapay Zekâ Tabanlı Bilişim</span>
+      <h1>Köklü bilgelik,<br><span class="accent">derin</span> zekâ.</h1>
+      <p class="hero-sub">Yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştürüyoruz — sağlam mühendislik, ölçülü tasarım ve kalıcı değerle.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#iletisim">İletişime geç</a>
+        <a class="btn btn-ghost" href="#yaptiklarimiz">Ne yapıyoruz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NE YAPIYORUZ -->
+  <section class="block" id="yaptiklarimiz">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ne yapıyoruz</span>
+        <h2>Araştırmadan üretime, uçtan uca.</h2>
+      </div>
+      <div class="cards">
+        <div class="card reveal">
+          <span class="num">01</span>
+          <h3>Yapay Zekâ &amp; Makine Öğrenmesi</h3>
+          <p>Veri odaklı modeller, tahminleme ve derin öğrenme. Araştırma seviyesindeki yöntemleri güvenilir, ölçeklenebilir ürünlere taşıyoruz.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">02</span>
+          <h3>Yazılım Geliştirme</h3>
+          <p>Web, mobil ve bulut tabanlı uygulamalar. Sağlam mimari, temiz kod ve sürdürülebilir sistemler.</p>
+        </div>
+        <div class="card reveal">
+          <span class="num">03</span>
+          <h3>Kurumsal &amp; Akademik Çözümler</h3>
+          <p>Akreditasyon, değerlendirme ve süreç yönetimi için yapay zekâ destekli platformlar; kurumların işini kolaylaştıran araçlar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- İSMİN HİKÂYESİ -->
+  <section class="block" id="isim">
+    <div class="wrap story">
+      <div class="reveal">
+        <span class="eyebrow">İsmin ardındaki</span>
+        <h2>Deep + Olea</h2>
+        <p class="lede"><em>Olea</em>, zeytin ağacının Latince adıdır — Akdeniz'in kadim bilgelik simgesi, Athena'nın armağanı. Köklü, sabırlı, kalıcı.</p>
+        <p class="lede"><em>Deep</em> ise derin öğrenmenin dili; katman katman düşünen, örüntüleri görebilen yapay zekânın.</p>
+        <p class="lede">DeepOlea bu ikisini birleştirir: köklü bir bilgeliğe dayanan, derinlemesine düşünen teknoloji.</p>
+      </div>
+      <div class="equation reveal" aria-hidden="true">
+        <span class="deep">Deep</span><span class="plus">+</span><span class="olea">Olea</span>
+        <small>derin zekâ · köklü bilgelik</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- İLETİŞİM -->
+  <section class="block block-alt" id="iletisim">
+    <div class="wrap">
+      <div class="contact reveal">
+        <span class="eyebrow">İletişim</span>
+        <h2>Birlikte bir şey kuralım.</h2>
+        <p>Bir fikriniz, bir projeniz ya da bir sorunuz mu var? Konuşmaktan memnuniyet duyarız.</p>
+        <a class="mail" href="mailto:info@deepolea.com">info@deepolea.com</a>
+        <div class="meta">Gaziantep, Türkiye</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">
+      <img src="deepolea-mark.png" alt="DeepOlea amblemi" />
+      <span class="name">DeepOlea</span>
+    </a>
+    <span class="fine">© 2026 DeepOlea · deepolea.com</span>
+  </div>
+</footer>
+
+<script>
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>12)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(prefersReduced||!('IntersectionObserver'in window)){
+    items.forEach(function(el){el.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.16,rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }
+</script>
+</body>
+</html>
