@@ -1,0 +1,43 @@
+{
+  "page_title_home": "DeepOlea — Yapay Zekâ Tabanlı Bilişim Çözümleri",
+  "page_title_projects": "DeepOlea — Projeler",
+  "meta_description": "DeepOlea, yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştüren bir teknoloji şirketidir. Gaziantep merkezli.",
+  
+  "nav_what_we_do": "Ne yapıyoruz",
+  "nav_story": "İsmin hikâyesi",
+  "nav_projects": "Projeler",
+  "nav_contact": "İletişim",
+  
+  "hero_eyebrow": "Yapay Zekâ Tabanlı Bilişim",
+  "hero_title": "Köklü bilgelik,<br><span class=\"accent\">derin</span> zekâ.",
+  "hero_sub": "Yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştürüyoruz — sağlam mühendislik, ölçülü tasarım ve kalıcı değerle.",
+  "btn_contact": "İletişime geç",
+  "btn_what_we_do": "Ne yapıyoruz",
+  
+  "section_what_eyebrow": "Ne yapıyoruz",
+  "section_what_title": "Araştırmadan üretime, uçtan uca.",
+  "card_1_title": "Yapay Zekâ & Makine Öğrenmesi",
+  "card_1_desc": "Veri odaklı modeller, tahminleme ve derin öğrenme. Araştırma seviyesindeki yöntemleri güvenilir, ölçeklenebilir ürünlere taşıyoruz.",
+  "card_2_title": "Yazılım Geliştirme",
+  "card_2_desc": "Web, mobil ve bulut tabanlı uygulamalar. Sağlam mimari, temiz kod ve sürdürülebilir sistemler.",
+  "card_3_title": "Kurumsal & Akademik Çözümler",
+  "card_3_desc": "Akreditasyon, değerlendirme ve süreç yönetimi için yapay zekâ destekli platformlar; kurumların işini kolaylaştıran araçlar.",
+  
+  "section_story_eyebrow": "İsmin ardındaki",
+  "section_story_p1": "<em>Olea</em>, zeytin ağacının Latince adıdır — Akdeniz'in kadim bilgelik simgesi, Athena'nın armağanı. Köklü, sabırlı, kalıcı.",
+  "section_story_p2": "<em>Deep</em> ise derin öğrenmenin dili; katman katman düşünen, örüntüleri görebilen yapay zekânın.",
+  "section_story_p3": "DeepOlea bu ikisini birleştirir: köklü bir bilgeliğe dayanan, derinlemesine düşünen teknoloji.",
+  "section_story_small": "derin zekâ · köklü bilgelik",
+  
+  "section_contact_eyebrow": "İletişim",
+  "section_contact_title": "Birlikte bir şey kuralım.",
+  "section_contact_desc": "Bir fikriniz, bir projeniz ya da bir sorunuz mu var? Konuşmaktan memnuniyet duyarız.",
+  "contact_location": "Gaziantep, Türkiye",
+
+  "projects_page_eyebrow": "Çalışmalar",
+  "projects_page_title": "Projeler",
+  "projects_page_desc": "Geliştirilmekte olan derin öğrenme modelleri, U-Net ve Autoencoder mimarileri ile yürütülen araştırmalar ve diğer yazılım projeleri yakında bu alanda listelenecektir.",
+  
+  "alt_logo": "DeepOlea logo",
+  "alt_mark": "DeepOlea amblemi"
+}

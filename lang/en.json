@@ -1,0 +1,43 @@
+{
+    "page_title_home": "DeepOlea — AI-Based IT Solutions",
+    "page_title_projects": "DeepOlea — Projects",
+    "meta_description": "DeepOlea is a technology company that transforms artificial intelligence and machine learning into real-world IT solutions. Based in Gaziantep.",
+    
+    "nav_what_we_do": "What we do",
+    "nav_story": "Our story",
+    "nav_projects": "Projects",
+    "nav_contact": "Contact",
+    
+    "hero_eyebrow": "AI-Based Information Technology",
+    "hero_title": "Deep-rooted wisdom,<br><span class=\"accent\">deep</span> intelligence.",
+    "hero_sub": "We transform artificial intelligence and machine learning into real-world IT solutions — with solid engineering, measured design, and lasting value.",
+    "btn_contact": "Get in touch",
+    "btn_what_we_do": "What we do",
+    
+    "section_what_eyebrow": "What we do",
+    "section_what_title": "From research to production, end-to-end.",
+    "card_1_title": "AI & Machine Learning",
+    "card_1_desc": "Data-driven models, forecasting, and deep learning. We bring research-level methods to reliable, scalable products.",
+    "card_2_title": "Software Development",
+    "card_2_desc": "Web, mobile, and cloud-based applications. Solid architecture, clean code, and sustainable systems.",
+    "card_3_title": "Corporate & Academic Solutions",
+    "card_3_desc": "AI-supported platforms for accreditation, evaluation, and process management; tools that make institutional work easier.",
+    
+    "section_story_eyebrow": "Behind the name",
+    "section_story_p1": "<em>Olea</em> is the Latin name for the olive tree — the ancient Mediterranean symbol of wisdom, the gift of Athena. Deep-rooted, patient, enduring.",
+    "section_story_p2": "<em>Deep</em> is the language of deep learning; of artificial intelligence that thinks in layers and sees patterns.",
+    "section_story_p3": "DeepOlea unites these two: technology that thinks deeply, grounded in deep-rooted wisdom.",
+    "section_story_small": "deep intelligence · deep-rooted wisdom",
+    
+    "section_contact_eyebrow": "Contact",
+    "section_contact_title": "Let's build something together.",
+    "section_contact_desc": "Do you have an idea, a project, or a question? We'd be happy to talk.",
+    "contact_location": "Gaziantep, Turkey",
+  
+    "projects_page_eyebrow": "Works",
+    "projects_page_title": "Projects",
+    "projects_page_desc": "Deep learning models under development, research conducted with U-Net and Autoencoder architectures, and other software projects will be listed here soon.",
+    
+    "alt_logo": "DeepOlea logo",
+    "alt_mark": "DeepOlea emblem"
+  }

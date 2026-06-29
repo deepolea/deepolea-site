@@ -3,21 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DeepOlea — Yapay Zekâ Tabanlı Bilişim Çözümleri</title>
-<meta name="description" content="DeepOlea, yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştüren bir teknoloji şirketidir. Gaziantep merkezli." />
+<title data-i18n="page_title_home">DeepOlea — Yapay Zekâ Tabanlı Bilişim Çözümleri</title>
+<meta name="description" data-i18n="meta_description" content="DeepOlea, yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştüren bir teknoloji şirketidir. Gaziantep merkezli." />
 <meta name="theme-color" content="#F2F3EC" />
-<link rel="icon" type="image/png" href="favicon.png" />
-
-<!-- ============================================================
-     ÖZELLEŞTİRME NOTLARI:
-     - Görseller index.html ile AYNI klasörde olmalı:
-         deepolea-logo.jpg  (üstteki tam logo)
-         deepolea-mark.png  (başlıktaki amblem)
-         favicon.png        (sekme ikonu)
-     - E-posta: "info@deepolea.com" -> kendi adresinizle değiştirin.
-     - Domain: alt bilgideki "deepolea.com" -> kendi alan adınızla.
-     - Hizmet kartlarını ve iletişim bilgisini işinize göre düzenleyin.
-     ============================================================ -->
+<link rel="icon" type="image/png" href="images/favicon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,14 +14,14 @@
 
 <style>
   :root{
-    --paper:#F2F3EC;        /* logo kremi, ana zemin */
-    --paper-2:#EAEBDF;      /* hafif derin krem, alternatif bölüm */
-    --card:#FBFBF6;         /* yükseltilmiş kart */
-    --green-deep:#1B462B;   /* derin orman yeşili (logodan) — birincil */
-    --green:#3D6237;        /* yaprak yeşili (logodan) — ikincil/vurgu */
-    --green-bright:#5C8A4A; /* taze yeşil — hover */
-    --ink:#26301F;          /* gövde metni (yeşilimsi koyu, siyah değil) */
-    --muted:#5E6A52;        /* ikincil metin */
+    --paper:#F2F3EC;
+    --paper-2:#EAEBDF;
+    --card:#FBFBF6;
+    --green-deep:#1B462B;
+    --green:#3D6237;
+    --green-bright:#5C8A4A;
+    --ink:#26301F;
+    --muted:#5E6A52;
     --line:rgba(27,70,43,.16);
     --line-strong:rgba(27,70,43,.30);
     --maxw:1120px;
@@ -168,13 +157,19 @@
 <header id="hdr">
   <div class="wrap nav">
     <a class="brand" href="#top">
-      <img src="deepolea-mark.png" alt="DeepOlea amblemi" />
+      <img src="images/deepolea-mark.png" data-i18n="alt_mark" alt="DeepOlea amblemi" />
       <span class="name">DeepOlea</span>
     </a>
     <nav class="nav-links">
-      <a href="#yaptiklarimiz">Ne yapıyoruz</a>
-      <a href="#isim">İsmin hikâyesi</a>
-      <a class="nav-cta" href="#iletisim">İletişim</a>
+      <a href="#yaptiklarimiz" data-i18n="nav_what_we_do">Ne yapıyoruz</a>
+      <a href="#isim" data-i18n="nav_story">İsmin hikâyesi</a>
+      <a href="projects/index.html" data-i18n="nav_projects">Projeler</a>
+      <a class="nav-cta" href="#iletisim" data-i18n="nav_contact">İletişim</a>
+      
+      <select id="lang-selector" style="background: transparent; border: 1px solid var(--line-strong); color: var(--green-deep); padding: 4px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; cursor: pointer; outline: none;">
+        <option value="tr">TR</option>
+        <option value="en">EN</option>
+      </select>
     </nav>
   </div>
 </header>
@@ -185,13 +180,13 @@
   <section class="hero">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <img class="hero-logo" src="deepolea-logo.jpg" alt="DeepOlea logo" />
-      <span class="eyebrow hero-eyebrow">Yapay Zekâ Tabanlı Bilişim</span>
-      <h1>Köklü bilgelik,<br><span class="accent">derin</span> zekâ.</h1>
-      <p class="hero-sub">Yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştürüyoruz — sağlam mühendislik, ölçülü tasarım ve kalıcı değerle.</p>
+      <img class="hero-logo" src="images/deepolea-logo.jpg" data-i18n="alt_logo" alt="DeepOlea logo" />
+      <span class="eyebrow hero-eyebrow" data-i18n="hero_eyebrow">Yapay Zekâ Tabanlı Bilişim</span>
+      <h1 data-i18n="hero_title">Köklü bilgelik,<br><span class="accent">derin</span> zekâ.</h1>
+      <p class="hero-sub" data-i18n="hero_sub">Yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştürüyoruz — sağlam mühendislik, ölçülü tasarım ve kalıcı değerle.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#iletisim">İletişime geç</a>
-        <a class="btn btn-ghost" href="#yaptiklarimiz">Ne yapıyoruz</a>
+        <a class="btn btn-primary" href="#iletisim" data-i18n="btn_contact">İletişime geç</a>
+        <a class="btn btn-ghost" href="#yaptiklarimiz" data-i18n="btn_what_we_do">Ne yapıyoruz</a>
       </div>
     </div>
   </section>
@@ -200,24 +195,24 @@
   <section class="block" id="yaptiklarimiz">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Ne yapıyoruz</span>
-        <h2>Araştırmadan üretime, uçtan uca.</h2>
+        <span class="eyebrow" data-i18n="section_what_eyebrow">Ne yapıyoruz</span>
+        <h2 data-i18n="section_what_title">Araştırmadan üretime, uçtan uca.</h2>
       </div>
       <div class="cards">
         <div class="card reveal">
           <span class="num">01</span>
-          <h3>Yapay Zekâ &amp; Makine Öğrenmesi</h3>
-          <p>Veri odaklı modeller, tahminleme ve derin öğrenme. Araştırma seviyesindeki yöntemleri güvenilir, ölçeklenebilir ürünlere taşıyoruz.</p>
+          <h3 data-i18n="card_1_title">Yapay Zekâ &amp; Makine Öğrenmesi</h3>
+          <p data-i18n="card_1_desc">Veri odaklı modeller, tahminleme ve derin öğrenme. Araştırma seviyesindeki yöntemleri güvenilir, ölçeklenebilir ürünlere taşıyoruz.</p>
         </div>
         <div class="card reveal">
           <span class="num">02</span>
-          <h3>Yazılım Geliştirme</h3>
-          <p>Web, mobil ve bulut tabanlı uygulamalar. Sağlam mimari, temiz kod ve sürdürülebilir sistemler.</p>
+          <h3 data-i18n="card_2_title">Yazılım Geliştirme</h3>
+          <p data-i18n="card_2_desc">Web, mobil ve bulut tabanlı uygulamalar. Sağlam mimari, temiz kod ve sürdürülebilir sistemler.</p>
         </div>
         <div class="card reveal">
           <span class="num">03</span>
-          <h3>Kurumsal &amp; Akademik Çözümler</h3>
-          <p>Akreditasyon, değerlendirme ve süreç yönetimi için yapay zekâ destekli platformlar; kurumların işini kolaylaştıran araçlar.</p>
+          <h3 data-i18n="card_3_title">Kurumsal &amp; Akademik Çözümler</h3>
+          <p data-i18n="card_3_desc">Akreditasyon, değerlendirme ve süreç yönetimi için yapay zekâ destekli platformlar; kurumların işini kolaylaştıran araçlar.</p>
         </div>
       </div>
     </div>
@@ -227,15 +222,15 @@
   <section class="block" id="isim">
     <div class="wrap story">
       <div class="reveal">
-        <span class="eyebrow">İsmin ardındaki</span>
+        <span class="eyebrow" data-i18n="section_story_eyebrow">İsmin ardındaki</span>
         <h2>Deep + Olea</h2>
-        <p class="lede"><em>Olea</em>, zeytin ağacının Latince adıdır — Akdeniz'in kadim bilgelik simgesi, Athena'nın armağanı. Köklü, sabırlı, kalıcı.</p>
-        <p class="lede"><em>Deep</em> ise derin öğrenmenin dili; katman katman düşünen, örüntüleri görebilen yapay zekânın.</p>
-        <p class="lede">DeepOlea bu ikisini birleştirir: köklü bir bilgeliğe dayanan, derinlemesine düşünen teknoloji.</p>
+        <p class="lede" data-i18n="section_story_p1"><em>Olea</em>, zeytin ağacının Latince adıdır — Akdeniz'in kadim bilgelik simgesi, Athena'nın armağanı. Köklü, sabırlı, kalıcı.</p>
+        <p class="lede" data-i18n="section_story_p2"><em>Deep</em> ise derin öğrenmenin dili; katman katman düşünen, örüntüleri görebilen yapay zekânın.</p>
+        <p class="lede" data-i18n="section_story_p3">DeepOlea bu ikisini birleştirir: köklü bir bilgeliğe dayanan, derinlemesine düşünen teknoloji.</p>
       </div>
       <div class="equation reveal" aria-hidden="true">
         <span class="deep">Deep</span><span class="plus">+</span><span class="olea">Olea</span>
-        <small>derin zekâ · köklü bilgelik</small>
+        <small data-i18n="section_story_small">derin zekâ · köklü bilgelik</small>
       </div>
     </div>
   </section>
@@ -244,11 +239,11 @@
   <section class="block block-alt" id="iletisim">
     <div class="wrap">
       <div class="contact reveal">
-        <span class="eyebrow">İletişim</span>
-        <h2>Birlikte bir şey kuralım.</h2>
-        <p>Bir fikriniz, bir projeniz ya da bir sorunuz mu var? Konuşmaktan memnuniyet duyarız.</p>
+        <span class="eyebrow" data-i18n="section_contact_eyebrow">İletişim</span>
+        <h2 data-i18n="section_contact_title">Birlikte bir şey kuralım.</h2>
+        <p data-i18n="section_contact_desc">Bir fikriniz, bir projeniz ya da bir sorunuz mu var? Konuşmaktan memnuniyet duyarız.</p>
         <a class="mail" href="mailto:info@deepolea.com">info@deepolea.com</a>
-        <div class="meta">Gaziantep, Türkiye</div>
+        <div class="meta" data-i18n="contact_location">Gaziantep, Türkiye</div>
       </div>
     </div>
   </section>
@@ -258,7 +253,7 @@
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#top">
-      <img src="deepolea-mark.png" alt="DeepOlea amblemi" />
+      <img src="images/deepolea-mark.png" data-i18n="alt_mark" alt="DeepOlea amblemi" />
       <span class="name">DeepOlea</span>
     </a>
     <span class="fine">© 2026 DeepOlea · deepolea.com</span>
@@ -280,6 +275,67 @@
     },{threshold:.16,rootMargin:'0px 0px -40px 0px'});
     items.forEach(function(el){io.observe(el)});
   }
+
+  // --- DİL YÖNETİMİ (i18n) ---
+  async function loadLanguage(langCode) {
+    try {
+      // Bulunulan klasöre göre dil dosyasının yolunu ayarla
+      const pathPrefix = window.location.pathname.includes('/projects') ? '../' : '';
+      const response = await fetch(`${pathPrefix}lang/${langCode}.json`);
+      const translations = await response.json();
+      
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+          if (element.tagName === 'META') {
+            element.setAttribute('content', translations[key]); // Meta etiketleri
+          } else if (element.tagName === 'IMG') {
+            element.setAttribute('alt', translations[key]); // Resimler
+          } else {
+            element.innerHTML = translations[key]; // Metinler
+          }
+        }
+      });
+
+      // Seçimi tarayıcının hafızasına kaydet
+      localStorage.setItem('selectedLang', langCode);
+      document.documentElement.lang = langCode;
+
+      // Açılır kutuyu (select) güncel tut
+      const langSelector = document.getElementById('lang-selector');
+      if(langSelector) {
+        langSelector.value = langCode;
+      }
+
+    } catch (error) {
+      console.error("Dil dosyası yüklenirken hata oluştu:", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Sayfa yüklendiğinde hafızadaki dili oku, yoksa TR yap
+    const savedLang = localStorage.getItem('selectedLang') || 'tr';
+    loadLanguage(savedLang);
+
+    // Açılır kutudan yeni dil seçildiğinde çalışır
+    const langSelector = document.getElementById('lang-selector');
+    if(langSelector) {
+      langSelector.addEventListener('change', (event) => {
+        loadLanguage(event.target.value);
+      });
+    }
+  });
+
+  // YENİ EKLENEN: Başka bir sekmede dil değişirse bu sekmeyi de anında güncelle
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'selectedLang') {
+      loadLanguage(event.newValue);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadLanguage('tr'); // Varsayılan dil
+  });
 </script>
 </body>
 </html>

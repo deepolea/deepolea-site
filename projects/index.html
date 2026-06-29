@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title data-i18n="page_title_projects">DeepOlea — Projeler</title>
+<meta name="description" data-i18n="meta_description" content="DeepOlea, yapay zekâ ve makine öğrenmesini gerçek dünya bilişim çözümlerine dönüştüren bir teknoloji şirketidir. Gaziantep merkezli." />
+<meta name="theme-color" content="#F2F3EC" />
+<link rel="icon" type="image/png" href="../images/favicon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#F2F3EC;
+    --paper-2:#EAEBDF;
+    --card:#FBFBF6;
+    --green-deep:#1B462B;
+    --green:#3D6237;
+    --green-bright:#5C8A4A;
+    --ink:#26301F;
+    --muted:#5E6A52;
+    --line:rgba(27,70,43,.16);
+    --line-strong:rgba(27,70,43,.30);
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(61,98,55,.22);color:var(--green-deep)}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--green);
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;color:var(--green-deep);font-weight:500;line-height:1.08}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px;border-radius:2px}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom,rgba(242,243,236,.9),rgba(242,243,236,.5));
+    border-bottom:1px solid transparent;transition:border-color .4s ease,background .4s ease;
+  }
+  header.scrolled{border-bottom:1px solid var(--line);background:rgba(242,243,236,.94)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .brand img{height:34px;width:auto;display:block}
+  .brand .name{font-family:"Fraunces",serif;font-size:22px;font-weight:600;color:var(--green-deep);letter-spacing:.01em}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--ink);transition:color .25s}
+  .nav-links a:hover{color:var(--green-deep)}
+  .nav-cta{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.04em;
+    color:var(--green-deep)!important;border:1px solid var(--line-strong);
+    padding:8px 16px;border-radius:999px;transition:border-color .25s,background .25s;
+  }
+  .nav-cta:hover{border-color:var(--green);background:rgba(61,98,55,.07)}
+  @media(max-width:680px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* ---------- sections ---------- */
+  section.block{padding:92px 0;border-top:1px solid var(--line)}
+  .section-head{margin-bottom:52px;max-width:38em}
+  .section-head .eyebrow{display:block;margin-bottom:16px}
+  .section-head h2{font-size:clamp(2rem,4.4vw,2.85rem);letter-spacing:-.015em}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:38px 0; margin-top: auto;}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .foot .brand{gap:10px}
+  .foot .brand img{height:26px}
+  .foot .brand .name{font-size:17px}
+  .foot .fine{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--muted)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
+  .reveal.in{opacity:1;transform:translateY(0)}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1!important;transform:none!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="../index.html">
+      <img src="../images/deepolea-mark.png" data-i18n="alt_mark" alt="DeepOlea amblemi" />
+      <span class="name">DeepOlea</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#yaptiklarimiz" data-i18n="nav_what_we_do">Ne yapıyoruz</a>
+      <a href="#isim" data-i18n="nav_story">İsmin hikâyesi</a>
+      <a href="projects/index.html" data-i18n="nav_projects">Projeler</a>
+      <a class="nav-cta" href="#iletisim" data-i18n="nav_contact">İletişim</a>
+      
+      <select id="lang-selector" style="background: transparent; border: 1px solid var(--line-strong); color: var(--green-deep); padding: 4px 8px; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; cursor: pointer; outline: none;">
+        <option value="tr">TR</option>
+        <option value="en">EN</option>
+      </select>
+    </nav>
+  </div>
+</header>
+
+<main id="top" style="flex: 1; padding-top: 120px; padding-bottom: 50px;">
+
+  <!-- PROJELER İÇERİK ALANI -->
+  <section class="block" style="border-top: none;">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="projects_page_eyebrow">Çalışmalar</span>
+        <h2 data-i18n="projects_page_title">Projeler</h2>
+      </div>
+      
+      <div class="reveal">
+        <p style="color: var(--muted); font-size: 1.1rem;" data-i18n="projects_page_desc">Geliştirilmekte olan derin öğrenme modelleri, U-Net ve Autoencoder mimarileri ile yürütülen araştırmalar ve diğer yazılım projeleri yakında bu alanda listelenecektir.</p>
+      </div>
+      
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="../index.html">
+      <img src="../images/deepolea-mark.png" data-i18n="alt_mark" alt="DeepOlea amblemi" />
+      <span class="name">DeepOlea</span>
+    </a>
+    <span class="fine">© 2026 DeepOlea · deepolea.com</span>
+  </div>
+</footer>
+
+<script>
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>12)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items=document.querySelectorAll('.reveal');
+  if(prefersReduced||!('IntersectionObserver'in window)){
+    items.forEach(function(el){el.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.16,rootMargin:'0px 0px -40px 0px'});
+    items.forEach(function(el){io.observe(el)});
+  }
+
+  // --- DİL YÖNETİMİ (i18n) ---
+  async function loadLanguage(langCode) {
+    try {
+      // Bulunulan klasöre göre dil dosyasının yolunu ayarla
+      const pathPrefix = window.location.pathname.includes('/projects') ? '../' : '';
+      const response = await fetch(`${pathPrefix}lang/${langCode}.json`);
+      const translations = await response.json();
+      
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[key]) {
+          if (element.tagName === 'META') {
+            element.setAttribute('content', translations[key]); // Meta etiketleri
+          } else if (element.tagName === 'IMG') {
+            element.setAttribute('alt', translations[key]); // Resimler
+          } else {
+            element.innerHTML = translations[key]; // Metinler
+          }
+        }
+      });
+
+      // Seçimi tarayıcının hafızasına kaydet
+      localStorage.setItem('selectedLang', langCode);
+      document.documentElement.lang = langCode;
+
+      // Açılır kutuyu (select) güncel tut
+      const langSelector = document.getElementById('lang-selector');
+      if(langSelector) {
+        langSelector.value = langCode;
+      }
+
+    } catch (error) {
+      console.error("Dil dosyası yüklenirken hata oluştu:", error);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Sayfa yüklendiğinde hafızadaki dili oku, yoksa TR yap
+    const savedLang = localStorage.getItem('selectedLang') || 'tr';
+    loadLanguage(savedLang);
+
+    // Açılır kutudan yeni dil seçildiğinde çalışır
+    const langSelector = document.getElementById('lang-selector');
+    if(langSelector) {
+      langSelector.addEventListener('change', (event) => {
+        loadLanguage(event.target.value);
+      });
+    }
+  });
+
+  // YENİ EKLENEN: Başka bir sekmede dil değişirse bu sekmeyi de anında güncelle
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'selectedLang') {
+      loadLanguage(event.newValue);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    loadLanguage('tr'); // Varsayılan dil
+  });
+</script>
+</body>
+</html>
