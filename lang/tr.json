@@ -58,7 +58,7 @@
   "proj_fisformer_table_info": "Bilgi",
   "proj_fisformer_perf_title": "Performans ve Ablasyon Analizi",
   "proj_fisformer_perf_desc": "FISformer, MSE (Ortalama Kare Hatası) ve MAE (Ortalama Mutlak Hata) metriklerinde, Informer, Autoformer, Fedformer, Crossformer ve iTransformer gibi güncel mimarileri geride bırakmıştır. Ayrıca ablasyon çalışmaları, FIS mekanizmasının standart Self-Attention mekanizmasına göre üstünlüğünü kanıtlamıştır.",
-  "proj_tab2_desc": "Tablo II. Farklı tahmin uzunlukları üzerinden MSE ve MAE metrikleriyle ortalama tahmin performansı. En iyi sonuçlar kırmızı, en iyi ikinci sonuçlar mavi ile vurgulanmıştır.",
+  "proj_tab2_desc": "Tablo II. Farklı tahmin uzunlukları üzerinden MSE ve MAE metrikleriyle ortalama tahmin performansı. En iyi sonuçlar <span style=\"color: #d9534f; font-weight: 600;\">kırmızı</span>, en iyi ikinci sonuçlar <span style=\"color: #0275d8; font-weight: 600;\">mavi</span> ile vurgulanmıştır.",
   "proj_fisformer_table_model": "Model",
   "fig1_caption": "Şekil 1. Önerilen FISformer modelinin genel mimarisi.",
   "fig2_caption": "Şekil 2. FIS Tabanlı Token Etkileşimi. Sorgu ve anahtar tokenleri öğrenilebilir Gauss üyelik fonksiyonları ile bulanıklaştırılır.",

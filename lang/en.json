@@ -58,7 +58,7 @@
   "proj_fisformer_table_info": "Information",
   "proj_fisformer_perf_title": "Performance and Ablation Analysis",
   "proj_fisformer_perf_desc": "FISformer consistently outperformed state-of-the-art architectures like Informer, Autoformer, Fedformer, and iTransformer in MSE and MAE metrics. Furthermore, ablation studies proved the superiority of the FIS mechanism over standard Self-Attention.",
-  "proj_tab2_desc": "Table II. Average forecasting performance in terms of MSE and MAE across different prediction lengths. The best results are highlighted in red, and the second-best results are underlined blue.",
+  "proj_tab2_desc": "Table II. Average forecasting performance in terms of MSE and MAE across different prediction lengths. The best results are highlighted in <span style=\"color: #d9534f; font-weight: 600;\">red</span>, and the second-best results are underlined <span style=\"color: #0275d8; font-weight: 600;\">blue</span>.",
   "proj_fisformer_table_model": "Model",
   "fig1_caption": "Fig. 1. Overall architecture of the proposed FISformer model.",
   "fig2_caption": "Fig. 2. FIS-based Token Interaction via learnable Gaussian membership functions.",
