@@ -65,9 +65,15 @@
   "fig4_caption": "Şekil 3. Traffic ve ECL veri setleri üzerinde tahmin sonuçlarının görselleştirilmesi.",
   "fig5_caption": "Şekil 4. Farklı ayrım seviyelerinde sorgu ve anahtarlar için öğrenilmiş Gauss üyelik fonksiyonları.",
   "proj_tab6_desc": "Tablo III. Farklı veri setleri üzerinde standart self-attention'a (Ablasyon) kıyasla FIS Interaction mekanizmasının etkisi.",
-  "cite_title": "Atıf (Citation)",
+  "cite_title": "Atıf",
   "cite_desc": "Bu çalışmayı projelerinizde kullanırsanız lütfen makalemizi alıntılayın.",
-  "contact_title": "İletişim (Contact)",
+  "contact_title": "İletişim",
   "contact_desc": "Sorularınız veya kodun kullanımı hakkında detaylı bilgi için iletişime geçebilirsiniz:",
-  "btn_copy": "Kopyala"
+  "btn_copy": "Kopyala",
+  "nav_lab": "DeepOlea Lab",
+  "projects_company_title": "Projeler",
+  "projects_company_desc": "DeepOlea'nın temel kuruluş amacı, tamamen yapay zekâ tabanlı veya yapay zekâ destekli yenilikçi bilişim çözümleri üretmektir. Bu vizyon doğrultusunda geliştirdiğimiz kurumsal projeler yakında bu alanda listelenecektir.",
+  "lab_academic_title": "Akademik Çalışmalar",
+  "lab_academic_desc": "Geliştirilmekte olan derin öğrenme modelleri, yürütülen araştırmalar ve yayımlanan bilimsel makalelerimiz bu laboratuvar çatısı altında sunulmaktadır.",
+  "nav_back_lab": "DeepOlea Lab"
 }

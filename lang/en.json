@@ -69,5 +69,11 @@
   "cite_desc": "If you find this repo helpful, please cite our paper.",
   "contact_title": "Contact",
   "contact_desc": "If you have any questions or want to use the code, feel free to contact:",
-  "btn_copy": "Copy"
+  "btn_copy": "Copy",
+  "nav_lab": "DeepOlea Lab",
+  "projects_company_title": "Projects",
+  "projects_company_desc": "The core founding purpose of DeepOlea is to produce fully AI-based or AI-supported innovative IT solutions. Our corporate projects developed in line with this vision will soon be listed in this area.",
+  "lab_academic_title": "Academic Studies",
+  "lab_academic_desc": "Deep learning models under development, ongoing research, and our published scientific papers are presented under this laboratory umbrella.",
+  "nav_back_lab": "DeepOlea Lab"
 }

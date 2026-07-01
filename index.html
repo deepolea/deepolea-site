@@ -150,6 +150,11 @@
     .reveal,.hero-logo,.hero-eyebrow,.hero h1,.hero-sub,.hero-actions{opacity:1!important;transform:none!important}
     html{scroll-behavior:auto}
   }
+
+  /* Dil yüklenene kadar sayfayı gizle, yüklendiğinde yumuşakça göster */
+  body { opacity: 0; transition: opacity 0.25s ease-in-out; }
+  body.lang-loaded { opacity: 1 !important; }
+
 </style>
 </head>
 <body>
@@ -163,6 +168,7 @@
     <nav class="nav-links">
       <a href="#yaptiklarimiz" data-i18n="nav_what_we_do">Ne yapıyoruz</a>
       <a href="#isim" data-i18n="nav_story">İsmin hikâyesi</a>
+      <a href="lab/" data-i18n="nav_lab">DeepOlea Lab</a>
       <a href="projects/" data-i18n="nav_projects">Projeler</a>
       <a class="nav-cta" href="#iletisim" data-i18n="nav_contact">İletişim</a>
       
@@ -256,85 +262,8 @@
   </div>
 </footer>
 
-<script>
-  // --- ARAYÜZ ANİMASYONLARI ---
-  var hdr=document.getElementById('hdr');
-  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>12)};
-  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
-
-  var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var items=document.querySelectorAll('.reveal');
-  if(prefersReduced||!('IntersectionObserver'in window)){
-    items.forEach(function(el){el.classList.add('in')});
-  }else{
-    var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
-    },{threshold:.16,rootMargin:'0px 0px -40px 0px'});
-    items.forEach(function(el){io.observe(el)});
-  }
-
-  // --- DİL YÖNETİMİ VE OTOMATİK ALGILAMA ---
-  async function loadLanguage(langCode) {
-    try {
-      const pathPrefix = window.location.pathname.includes('/projects') ? '../' : '';
-      const response = await fetch(`${pathPrefix}lang/${langCode}.json`);
-      const translations = await response.json();
-      
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[key]) {
-          if (element.tagName === 'META') {
-            element.setAttribute('content', translations[key]);
-          } else if (element.tagName === 'IMG') {
-            element.setAttribute('alt', translations[key]);
-          } else {
-            element.innerHTML = translations[key];
-          }
-        }
-      });
-
-      // Seçilen dili tarayıcı hafızasına güvenle kaydet
-      localStorage.setItem('selectedLang', langCode);
-      document.documentElement.lang = langCode;
-
-      const langSelector = document.getElementById('lang-selector');
-      if(langSelector) {
-        langSelector.value = langCode;
-      }
-    } catch (error) {
-      console.error("Dil dosyası yüklenirken hata oluştu:", error);
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // Önce hafızaya bak, yoksa tarayıcı dilini algıla
-    let savedLang = localStorage.getItem('selectedLang');
-    
-    if (!savedLang) {
-      // Tarayıcı dilini al (Örn: 'tr-TR' veya 'en-US')
-      const browserLang = navigator.language || navigator.userLanguage;
-      // İlk iki harfi 'tr' ise Türkçe yap, değilse varsayılan 'en' olarak belirle
-      savedLang = browserLang.toLowerCase().startsWith('tr') ? 'tr' : 'en';
-    }
-
-    // Dili sisteme yükle
-    loadLanguage(savedLang); 
-
-    // Dropdown değiştiğinde...
-    const langSelector = document.getElementById('lang-selector');
-    if(langSelector) {
-      langSelector.addEventListener('change', (event) => {
-        loadLanguage(event.target.value);
-      });
-    }
-  });
-
-  // Başka bir sekmede dil değişirse bu sekmeyi de senkronize et
-  window.addEventListener('storage', (event) => {
-    if (event.key === 'selectedLang') {
-      loadLanguage(event.newValue);
-    }
-  });
-</script>
+<script src="js/main.js"></script>
+</body>
+</html>
 </body>
 </html>
