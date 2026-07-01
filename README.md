@@ -1,61 +1,54 @@
-# DeepOlea Web Sitesi
+# DeepOlea Web Platform
 
-Bu depo, [DeepOlea](https://deepolea.github.io/)'nın kurumsal tanıtımını ve yürütülen yapay zekâ odaklı bilişim projelerini sergilemek amacıyla oluşturulmuş statik web sitesinin kaynak kodlarını barındırmaktadır.
+DeepOlea is a technology company based in Gaziantep, Turkey, specializing in transforming artificial intelligence and machine learning into real-world IT solutions. 
 
-Sistem, harici bir framework (React, Vue vb.) kullanılmadan, saf (vanilla) HTML, CSS ve JavaScript ile yüksek performanslı ve yönetilebilir olacak şekilde tasarlanmıştır.
+This repository contains the source code for the DeepOlea corporate and academic portfolio website. It features a custom-built, lightweight internationalization (i18n) system, responsive design, and a clean architectural separation between commercial projects and academic research.
 
-## 📂 Dosya ve Klasör Yapısı
+## 📂 Project Structure
 
-Proje, GitHub Pages mimarisine uygun olarak kök dizin üzerinden çalışacak şekilde organize edilmiştir:
+The project follows a clean, modular folder structure to maintain the "Don't Repeat Yourself" (DRY) principle:
 
-```text
-.
-├── images/                 # Sitede kullanılan logolar, ikonlar ve diğer görseller
-├── lang/                   # Çok dilli yapı (i18n) için JSON dosyaları
-│   ├── tr.json             # Türkçe metin anahtarları
-│   └── en.json             # İngilizce metin anahtarları
-├── projects/               # Projeler sayfası alt dizini
-│   └── index.html          # Projeler sayfasının ana şablonu
-├── index.html              # Kurumsal ana sayfa (Kök dizin)
-└── README.md               # Proje dokümantasyonu (Bu dosya)
-```
+    deepolea/
+    │
+    ├── index.html              # Main landing page
+    ├── js/
+    │   └── main.js             # Centralized JavaScript (i18n, scroll animations, copy functions)
+    ├── lang/
+    │   ├── tr.json             # Turkish translation dictionary
+    │   └── en.json             # English translation dictionary
+    ├── lab/
+    │   ├── index.html          # DeepOlea Lab (Academic Works & Papers)
+    │   └── fisformer.html      # Academic Project detail page (e.g., FISformer)
+    ├── projects/
+    │   └── index.html          # Corporate & Commercial Projects
+    └── images/                 # Global assets, logos, and project figures
 
+## Key Features
 
-## ⚙️ Teknik Altyapı ve Çalışma Mantığı
+* **Dynamic i18n (Bilingual Support):** Fully supports Turkish (TR) and English (EN). Translations are fetched asynchronously from JSON files, enabling instant language switching without page reloads. Language preferences are stored in the browser's `localStorage`.
+* **FOUC Prevention:** Includes a custom CSS/JS fade-in mechanism to prevent the "Flash of Unstyled Content" (FOUC) during language loads, ensuring a smooth user experience.
+* **DeepOlea Lab:** A dedicated sub-directory (`/lab`) showcasing academic research, published papers, and experimental deep learning models (e.g., FISformer), complete with BibTeX citation copy functionality.
+* **Corporate Projects:** A separate sub-directory (`/projects`) strictly focused on commercial, AI-supported IT solutions.
+* **Vanilla Stack:** Built with pure HTML, CSS, and Vanilla JavaScript. No heavy frameworks, ensuring lightning-fast load times and easy maintenance.
 
-Bu projeyi geliştirmek veya içerik eklemek isteyenlerin aşağıdaki mimari kararları dikkate alması gerekmektedir:
+## How to Add a New Page or Project
 
-### 1. Çok Dilli Yapı (i18n)
-Sitedeki metinler HTML kodlarının içine sabitlenmemiş (hardcoded) olup, `lang/` klasöründeki JSON dosyaları üzerinden dinamik olarak yönetilmektedir.
+1. **Create the HTML File:** Place the new HTML file in either the `/projects/` or `/lab/` folder depending on its context.
+2. **Add the Script Tag:** Ensure the centralized `main.js` is linked at the bottom of the body. Since it's in a sub-folder, use the relative path:
+    `<script src="../js/main.js"></script>`
+3. **Use Data Attributes for Text:** Do not hardcode text. Use the `data-i18n` attribute for all text elements.
+    `<h1 data-i18n="new_project_title">Default Title</h1>`
+4. **Update JSON Dictionaries:** Add the corresponding key-value pairs to the bottom of both `lang/tr.json` and `lang/en.json`.
+5. **Add Images:** Place all related `.jpg` or `.png` files into the root `/images/` folder and link them using `../images/filename.jpg`.
 
-* **Çalışma Prensibi:** `index.html` dosyalarının alt kısmında bulunan JavaScript kodları, sayfa yüklendiğinde `fetch` API kullanarak ilgili JSON dosyasını okur.
-* **Kullanımı:** HTML içerisinde çevrilmesi gereken metinler, meta etiketleri veya resimlerin `alt` nitelikleri `data-i18n` özelliği ile işaretlenir.
-  * *Örnek:* `<h1 data-i18n="hero_title">Varsayılan Metin</h1>`
-* **Hafıza ve Senkronizasyon:** Kullanıcının dil tercihi tarayıcının `localStorage` (Yerel Depolama) belleğine `selectedLang` anahtarıyla kaydedilir. Sayfalar arası geçişlerde ve farklı sekmelerde (tab) dil seçimi otomatik olarak senkronize edilir (`storage` event listener ile).
+## While Testing
 
-### 2. Sayfa Geçişleri (Routing) ve Yönlendirmeler
-Site, alt klasör mimarisi kullanılarak sayfalara ayrılmıştır.
+Due to the Fetch API used for the JSON translation files, this project must be run on a local web server (opening the HTML file directly via `file://` protocol will cause CORS errors for the language files). 
 
-* Kök dizindeki `index.html` ana sayfayı temsil eder.
-* `/projects` URL'sine gidildiğinde `projects/` klasörü içindeki `index.html` dosyası çalışır.
-* **Önemli Not:** Alt sayfalardan (`projects/` içinden) ana sayfa bileşenlerine veya görsellere (`images/`, `lang/`) link verilirken, dosya yollarının başına mutlaka bir üst dizine çıkma işareti olan `../` eklenmelidir. (Örn: `href="../images/favicon.png"`).
-
-## 🚀 Geliştirme Ortamı Kurulumu
-
-Projeyi bilgisayarınızda (local) test ederken, JSON dosyalarının JavaScript ile dışarıdan okunması (`fetch` işlemi) nedeniyle tarayıcıların **CORS politikalarına** takılmamak için dosyaları çift tıklayarak (`file:///`) açmamalısınız.
-
-Geliştirme için bir yerel web sunucusu (Local Web Server) kullanılması zorunludur:
-
-* **VS Code Kullanıcıları İçin:** `Live Server` eklentisini kurun ve `index.html` dosyasına sağ tıklayıp "Open with Live Server" seçeneğini kullanın.
-* **Terminal/Ubuntu Kullanıcıları İçin:** Proje dizininde `python3 -m http.server` komutunu çalıştırarak siteye `http://localhost:8000` adresinden erişin.
-
-## 📝 İçerik Ekleme Rehberi
-
-Sisteme yeni bir başlık, buton veya metin ekleneceği zaman şu adımlar izlenmelidir:
-
-1. `lang/tr.json` ve `lang/en.json` dosyalarına aynı isimde yeni bir anahtar (key) ve karşılığı olan metinler (value) eklenir.
-2. HTML tarafında ilgili elementin içine `data-i18n="yeni_anahtar"` niteliği tanımlanır.
-3. Sayfa yenilendiğinde JavaScript yeni metni ilgili dile göre otomatik olarak DOM'a basacaktır.
+If you are using Visual Studio Code:
+1. Install the **Live Server** extension.
+2. Right-click `index.html` and select **"Open with Live Server"**.
+3. The site will open at `http://127.0.0.1:5500`.
 
 ---
-*© 2026 DeepOlea. Tüm hakları saklıdır.*
+*© 2026 DeepOlea · [deepolea.com]*
